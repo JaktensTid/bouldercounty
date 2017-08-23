@@ -83,7 +83,7 @@ def scrape(url):
         table = table[0]
         return parse_table(table)
 
-    item = {}
+    item = {'url' : url}
     item['title'] = by_id("ctl00_ctl00__main_main_lblApi")
     item['General well information'] = {
         'Operator': by_id("ctl00_ctl00__main_main_ucGeneralWellInformation_lblOperator"),
