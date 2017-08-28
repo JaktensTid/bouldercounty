@@ -184,7 +184,7 @@ def scrape(url):
 
 
 def main():
-    pool = ThreadPool(2)
+    pool = ThreadPool(1)
     pool.map(scrape, urls)
 
 
