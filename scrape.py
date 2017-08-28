@@ -23,7 +23,8 @@ def scrape(url):
     global global_counter
     response = requests.get(url).text
     d = fromstring(response)
-
+    if 'We are sorry for the error. If this error persists, please notify the BasinLandRecords.com administrator.' in response:
+        print('Alarm!')
     def by_id(id):
         text = d.xpath(".//*[@id='%s']/text()" % id)
         if text:
@@ -183,7 +184,7 @@ def scrape(url):
 
 
 def main():
-    pool = ThreadPool(8)
+    pool = ThreadPool(2)
     pool.map(scrape, urls)
 
 
