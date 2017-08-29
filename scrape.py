@@ -185,7 +185,7 @@ def scrape(url):
 
 def main():
     pool = ThreadPool(1)
-    pool.map(scrape, urls)
+    pool.map(scrape, urls[16398:49849])
 
 
 if __name__ == '__main__':
